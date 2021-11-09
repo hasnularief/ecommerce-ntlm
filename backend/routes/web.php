@@ -18,3 +18,14 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('test', [ 'uses' => 'TestController@test' ]);
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->post('/login', 'Auth\\LoginController@login');
+    $router->post('/register', 'Auth\\RegisterController@register');
+
+    $router->group(['middleware' => 'auth:api'], function () use ($router) {
+        $router->get('/me', 'Auth\\LoginController@userDetails');
+        $router->get('/logout', 'Auth\\LoginController@logout');
+        $router->get('/check-login', 'Auth\\LoginController@checkLogin');
+    });
+});
