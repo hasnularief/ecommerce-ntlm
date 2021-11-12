@@ -81,6 +81,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'AdminIndex',
+  layout: 'admin',
   middleware: 'auth',
 })
 </script>

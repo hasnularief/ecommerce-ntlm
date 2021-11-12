@@ -18,9 +18,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import AdminHeaderParameters from '../helpers/AdminHeaderParameters'
 
 export default Vue.extend({
   name: 'AdminLogin',
+  head: {
+    title: 'online shop login',
+    bodyAttrs: {},
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'online shop login',
+      },
+    ],
+    ...AdminHeaderParameters,
+  },
 })
 </script>
 

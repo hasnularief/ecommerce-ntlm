@@ -64,7 +64,7 @@ export default Vue.extend({
         .$post('api/login', this.login_data)
         .then((response) => {
           this.saveIntoStorage(response)
-          this.$router.push('/')
+          this.$router.push('/admin')
         })
         .catch((error) => {
           this.error_message = error.response.data.message

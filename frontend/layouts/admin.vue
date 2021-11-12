@@ -13,6 +13,8 @@ import Vue from 'vue'
 import MobileHeader from '../components/admin/partials/MobileHeader.vue'
 import AdminSidebar from '../components/admin/partials/AdminSidebar.vue'
 import AdminHeader from '../components/admin/partials/AdminHeader.vue'
+import AdminHeaderParameters from '../helpers/AdminHeaderParameters'
+
 export default Vue.extend({
   components: { MobileHeader, AdminHeader, AdminSidebar },
   head: {
@@ -27,49 +29,7 @@ export default Vue.extend({
         content: 'online shop dashboard',
       },
     ],
-    link: [
-      { rel: 'stylesheet', type: 'text/css', href: '/css/font-face.css' },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/vendor/font-awesome-4.7/css/font-awesome.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/vendor/font-awesome-5/css/fontawesome-all.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/vendor/mdi-font/css/material-design-iconic-font.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/vendor/bootstrap-4.1/bootstrap.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/vendor/css-hamburgers/hamburgers.min.css',
-      },
-      { rel: 'stylesheet', type: 'text/css', href: '/css/theme.css' },
-    ],
-    script: [
-      {
-        src: '/vendor/jquery-3.2.1.min.js',
-        type: 'text/javascript',
-      },
-      {
-        src: '/vendor/bootstrap-4.1/popper.min.js',
-        type: 'text/javascript',
-      },
-      {
-        src: '/vendor/bootstrap-4.1/bootstrap.min.js',
-        type: 'text/javascript',
-      },
-    ],
+    ...AdminHeaderParameters,
   },
   mounted() {
     const script = document.createElement('script')

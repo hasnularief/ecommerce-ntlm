@@ -25,10 +25,7 @@
                   </div>
                   <div class="email__item">
                     <div class="image img-cir img-40">
-                      <img
-                        src="images/icon/avatar-06.jpg"
-                        alt="Cynthia Harvey"
-                      />
+                      <img src="images/avatar.png" alt="Cynthia Harvey" />
                     </div>
                     <div class="content">
                       <p>Meeting about new dashboard...</p>
@@ -37,10 +34,7 @@
                   </div>
                   <div class="email__item">
                     <div class="image img-cir img-40">
-                      <img
-                        src="images/icon/avatar-05.jpg"
-                        alt="Cynthia Harvey"
-                      />
+                      <img src="images/avatar.png" alt="Cynthia Harvey" />
                     </div>
                     <div class="content">
                       <p>Meeting about new dashboard...</p>
@@ -49,10 +43,7 @@
                   </div>
                   <div class="email__item">
                     <div class="image img-cir img-40">
-                      <img
-                        src="images/icon/avatar-04.jpg"
-                        alt="Cynthia Harvey"
-                      />
+                      <img src="images/avatar.png" alt="Cynthia Harvey" />
                     </div>
                     <div class="content">
                       <p>Meeting about new dashboard...</p>
@@ -107,7 +98,7 @@
             <div class="account-wrap">
               <div class="account-item clearfix js-item-menu">
                 <div class="image">
-                  <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                  <img src="images/avatar.png" alt="John Doe" />
                 </div>
                 <div class="content">
                   <a class="js-acc-btn" href="#">{{ getUserData().name }}</a>
@@ -116,7 +107,7 @@
                   <div class="info clearfix">
                     <div class="image">
                       <a href="#">
-                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                        <img src="images/avatar.png" alt="John Doe" />
                       </a>
                     </div>
                     <div class="content">
@@ -155,7 +146,7 @@ export default Vue.extend({
   methods: {
     getUserData(): any {
       const vm = this
-      return JSON.parse(vm.$cookies.get('user_data') || '{}')
+      return vm.$cookies.get('user_data') || {}
     },
     logout() {
       const vm = this
@@ -170,7 +161,7 @@ export default Vue.extend({
             vm.$cookies.remove('auth_token')
             vm.$cookies.remove('is_authenticated')
             vm.$cookies.remove('user_data')
-            this.$router.push('/login')
+            this.$router.push('/admin/login')
           }
         })
         .catch((_err) => {

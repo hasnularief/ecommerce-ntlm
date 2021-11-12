@@ -8,7 +8,7 @@ export default function (context: any) {
   } else {
     const user = context.app.$cookies.get('user_data')
     // const userParse = JSON.parse(user || '{}')
-    if (user.is_super_admin !== 1) {
+    if (!user || user.is_super_admin !== 1) {
       context.app.$cookies.remove('auth_token')
       context.app.$cookies.remove('is_authenticated')
       context.app.$cookies.remove('user_data')
